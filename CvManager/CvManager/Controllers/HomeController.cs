@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using CvManager.Business;
+using CvManager.Model;
 
 namespace CvManager.Controllers
 {
@@ -9,9 +12,11 @@ namespace CvManager.Controllers
             return View();
         }
 
-        public ActionResult Cv()
+        public ViewResult Cv()
         {
-            return View();
+            var cvGenerator = new CvGenerator();
+
+            return View(cvGenerator.GetElizabethsCv());
         }
 
         public ActionResult About()

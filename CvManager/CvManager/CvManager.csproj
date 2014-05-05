@@ -154,7 +154,16 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Cv.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CvManager.Business\CvManager.Business.csproj">
+      <Project>{BCB3ACF0-DC35-40ED-8CE5-D4229C37933B}</Project>
+      <Name>CvManager.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CvManager.Model\CvManager.Model.csproj">
+      <Project>{81987E26-EA93-4D01-80FC-D4A56A35AD3D}</Project>
+      <Name>CvManager.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
