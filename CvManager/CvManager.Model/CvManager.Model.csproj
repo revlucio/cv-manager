@@ -42,6 +42,7 @@
     <Compile Include="Cv.cs" />
     <Compile Include="Education.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reference.cs" />
     <Compile Include="WorkExperience.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
