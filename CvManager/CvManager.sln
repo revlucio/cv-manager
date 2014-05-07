@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CvManager.Business", "CvMan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CvManager.Model", "CvManager.Model\CvManager.Model.csproj", "{81987E26-EA93-4D01-80FC-D4A56A35AD3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CvManager.Model.Tests", "CvManager.Model.Tests\CvManager.Model.Tests.csproj", "{CFA1A118-0D1F-4BB9-B5CA-1777A324F39C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{81987E26-EA93-4D01-80FC-D4A56A35AD3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81987E26-EA93-4D01-80FC-D4A56A35AD3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81987E26-EA93-4D01-80FC-D4A56A35AD3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA1A118-0D1F-4BB9-B5CA-1777A324F39C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA1A118-0D1F-4BB9-B5CA-1777A324F39C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA1A118-0D1F-4BB9-B5CA-1777A324F39C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA1A118-0D1F-4BB9-B5CA-1777A324F39C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
