@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CvManager.Business">
+      <HintPath>..\CvManager\Bin\CvManager.Business.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -46,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Achievement.cs" />
+    <Compile Include="Conference.cs" />
     <Compile Include="Cv.cs" />
     <Compile Include="CvContext.cs" />
     <Compile Include="CvRepository.cs" />

@@ -15,8 +15,8 @@ namespace CvManager.Model
         public List<Education> Educations { get; set; }
         public List<WorkExperience> WorkExperiences { get; set; }
         public string Fieldwork { get; set; }
-        public List<string> Conferences { get; set; }
-        public List<string> Achievements { get; set; }
+        public List<Conference> Conferences { get; set; }
+        public List<Achievement> Achievements { get; set; }
         public string Skills { get; set; }
         public List<Reference> References { get; set; } 
     }

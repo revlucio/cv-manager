@@ -133,34 +133,34 @@ namespace CvManager.Business
                     <br>English<br><br>";
         }
 
-        private List<string> GetConferences()
+        private List<Conference> GetConferences()
         {
-            return new List<string>
+            return new List<Conference>
             {
-                "Forensic Investigations to Locate and Identify the Missing Forum (London, 2014)",
-                "2nd Annual Forum for Mass Grave Victim Identification (London, 2013)",
-                "Crime Scene and Disaster Victim Identification Forum (London, 2013)",
-                "Australasian Society of Human Biology (ASHB) Canberra Conference (Canberra, 2011)",
-                "7th Katipunan Arkeologist ng Pilipinas (KAPI) Conference (Manila, 2008)",
+                new Conference { Name = "Forensic Investigations to Locate and Identify the Missing Forum (London, 2014)" },
+                new Conference { Name = "2nd Annual Forum for Mass Grave Victim Identification (London, 2013)" },
+                new Conference { Name = "Crime Scene and Disaster Victim Identification Forum (London, 2013)" },
+                new Conference { Name = "Australasian Society of Human Biology (ASHB) Canberra Conference (Canberra, 2011)" },
+                new Conference { Name = "7th Katipunan Arkeologist ng Pilipinas (KAPI) Conference (Manila, 2008)" },
             };
         }
 
-        private List<string> GetAchievements()
+        private List<Achievement> GetAchievements()
         {
-            return new List<string>
+            return new List<Achievement>
             {
-                "Kenyon International Emergency Services: Team Member (2013)",
-                "Institute for Archaeologists (IFA): member 7774 (2013)",
-                "Australian Archaeology Association (AAA): member (2012)",
-                "Australasian society for Human Biology (ASHB): member (2012)",
-                "Rainbow Volunteer, ACT Mental Health Foundation Volunteer (08/09)",
-                "SharpFX Certificate in Prosthetic Special Effects (08)",
-                "The Dinosaur Age: Issue 11: Illustration: Fin evolution diagram (08)",
-                "ANU Student Association general representative (06)",
-                "ANU Burgmann College Arts and Social representative (05)",
-                "ANU Arts and Social Inter-hall committee secretary (05)",
-                "Manly Gallery and Museum's Inaugural Theo Batten Youth Art Award (04)",
-                "Express Yourself Art Exhibition at the Manly Gallery and Museum (04)",
+                new Achievement { Name = "Kenyon International Emergency Services: Team Member (2013)" },
+                new Achievement { Name = "Institute for Archaeologists (IFA): member 7774 (2013)" },
+                new Achievement { Name = "Australian Archaeology Association (AAA): member (2012)" },
+                new Achievement { Name = "Australasian society for Human Biology (ASHB): member (2012)" },
+                new Achievement { Name = "Rainbow Volunteer, ACT Mental Health Foundation Volunteer (08/09)" },
+                new Achievement { Name = "SharpFX Certificate in Prosthetic Special Effects (08)" },
+                new Achievement { Name = "The Dinosaur Age: Issue 11: Illustration: Fin evolution diagram (08)" },
+                new Achievement { Name = "ANU Student Association general representative (06)" },
+                new Achievement { Name = "ANU Burgmann College Arts and Social representative (05)" },
+                new Achievement { Name = "ANU Arts and Social Inter-hall committee secretary (05)" },
+                new Achievement { Name = "Manly Gallery and Museum's Inaugural Theo Batten Youth Art Award (04)" },
+                new Achievement { Name = "Express Yourself Art Exhibition at the Manly Gallery and Museum (04)" },
             };
         }
 
