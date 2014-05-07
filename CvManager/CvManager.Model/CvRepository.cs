@@ -1,3 +1,5 @@
+using CvManager.Business;
+using System.Data.Entity;
 using System.Linq;
 
 namespace CvManager.Model
@@ -13,12 +15,19 @@ namespace CvManager.Model
 
         public Cv GetElizabethsCv()
         {
-            return _context.Cvs.First();
+            return _context.Cvs
+                .Include(cv => cv.Achievements)
+                .Include(cv => cv.Educations)
+                .Include(cv => cv.WorkExperiences)
+                .Include(cv => cv.Conferences)
+                .Include(cv => cv.References)
+                .First(cv => cv.FullName == "Elizabeth L. Knox");
         }
 
         public void CreateNewCv()
         {
-            _context.Cvs.Add(new Cv());
+            var generator = new CvGenerator();
+            _context.Cvs.Add(generator.GetElizabethsCv());
             _context.SaveChanges();
         }
     }
