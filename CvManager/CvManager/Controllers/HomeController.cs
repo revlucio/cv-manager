@@ -5,11 +5,7 @@ namespace CvManager.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+        [HttpGet]
         public ViewResult Cv()
         {
             var repository = new CvRepository();
@@ -17,18 +13,20 @@ namespace CvManager.Controllers
             return View(repository.GetElizabethsCv());
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public ViewResult CvEdit()
         {
-            ViewBag.Message = "Your application description page.";
+            var repository = new CvRepository();
 
-            return View();
+            return View(repository.GetElizabethsCv());
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ViewResult CvEdit(Cv cv)
         {
-            ViewBag.Message = "Your contact page.";
+            var repository = new CvRepository();
 
-            return View();
+            return View(repository.GetElizabethsCv());
         }
     }
 }

@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "Cv";
+    Layout = null;
+}
+@model CvManager.Model.Cv
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>@Model.FullName</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div id="main">
+            <input type="submit" value="Submit"/>
+
+            <h1 id="title">@Model.FullName</h1>
+            <div class="basic-info section">
+                <div class="set">
+                    <p>
+                        E-mail: @Html.EditorFor(m => m.Email) <span class="dot">§</span>
+                        Website: @Html.EditorFor(m => m.Website) <span class="dot">§</span>
+                        Phone: @Html.EditorFor(m => m.PhoneNumber)
+                    </p>
+                    <p>
+                        @Model.Address
+                    </p>
+                    <div class="clear">
+                    </div>
+                </div>
+                <!-- set //-->
+                <div class="clear">
+                </div>
+            </div>
+            <!-- basic-info //-->
+            <div class="section section-education">
+                <h2 class="title">Education</h2>
+                <div class="set">
+                    @for (var i = 0; i < Model.Educations.Count; i++)
+                    {
+                        @Html.EditorFor(m => m.Educations[i])
+                    }
+                </div>
+            </div>
+            <div class="section section-work">
+                <h2 class="title">Work experience</h2>
+                <div class="set">
+                    @foreach (var item in Model.WorkExperiences)
+                    {
+                        <div class="item">
+                            <h3>
+                                <span class="l">@item.Company</span>
+                                <span class="r">@item.StartDate — @item.EndDate</span>
+                            </h3>
+                            <span class="clear">
+                            </span>
+                            <span class="job_title">@item.JobTitle</span>
+                            <span class="info">
+                                @Html.Raw(item.Details)
+                                <br>
+                            </span>
+                            <span class="clear">
+                            </span>
+                        </div>
+                    }
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="section section-interests">
+                <h2 class="title">Field Work and Practical Experience</h2>
+                <div class="set">
+                    <div class="item">
+                        <span class="info">
+                            @Html.Raw(Model.Fieldwork)
+                        </span>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="section section-1392497042317">
+                <h2 class="title">Committees and Achievements</h2>
+                <div class="set">
+                    <div class="item">
+                        <span class="info">
+                            <ul>
+                                @foreach (var item in Model.Achievements)
+                                {
+                                    <li>@item.Name</li>
+                                }
+                            </ul>
+                            <br><br>
+                        </span>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="section section-1392497124818">
+                <h2 class="title">Conferences</h2>
+                <div class="set">
+                    <div class="item">
+                        <span class="info">
+                            <ul>
+                                @foreach (var item in Model.Conferences)
+                                {
+                                    <li>@item.Name</li>
+                                }
+                            </ul>
+                            <br><br>
+                        </span>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="section section-1394453370588">
+                <h2 class="title">Aquired skills</h2>
+                <div class="set">
+                    <div class="item">
+                        <span class="info">
+                            @Html.Raw(Model.Skills)
+                        </span>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="section section-references">
+                <h2 class="title">References</h2>
+                <div class="set">
+                    <div class="item">
+                        <span class="info">
+                            @foreach (var item in Model.References)
+                            {
+                                <strong>@item.FullName:</strong>
+                                <br />
+                                @item.Job
+                                <br />
+                                @Html.Raw("Phone:")
+                                @item.PhoneNumber
+                                <br />
+                                @Html.Raw("Email:")
+                                @item.Email
+                                <br />
+                                <br />
+                            }
+                        </span>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>
+

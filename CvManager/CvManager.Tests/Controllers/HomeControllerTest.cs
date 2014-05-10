@@ -1,54 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CvManager;
-using CvManager.Controllers;
+﻿using CvManager.Views.Home;
+using HtmlAgilityPack;
+using NUnit.Framework;
+using RazorGenerator.Testing;
 
 namespace CvManager.Tests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class HomeControllerTest
     {
-        [TestMethod]
+        [Test]
         public void Index()
         {
-            // Arrange
-            HomeController controller = new HomeController();
+            // Instantiate the view directly. This is made possible by
+            // the fact that we precompiled it
+            var view = new Cv();
 
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
+            // Set up the data that needs to be accessed by the view
+            view.ViewBag.Message = "Testing";
 
-            // Assert
-            Assert.IsNotNull(result);
-        }
+            // Render it in an HtmlAgilityPack HtmlDocument. Note that
+            // you can pass a 'model' object here if your view needs one.
+            // Generally, what you do here is similar to how a controller
+            //action sets up data for its view.
+            var doc = view.RenderAsHtml().ToString();
 
-        [TestMethod]
-        public void About()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.About() as ViewResult;
-
-            // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
-        }
-
-        [TestMethod]
-        public void Contact()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.Contact() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
+            // Use the HtmlAgilityPack object model to verify the view.
+            // Here, we simply check that the first <h2> tag contains
+            // what we put in view.ViewBag.Message
+            //HtmlNode node = doc.DocumentNode.Element("h2");
+            //Assert.AreEqual("Testing", node.InnerHtml.Trim());
         }
     }
 }
