@@ -1,3 +1,5 @@
+using System.Web.Mvc;
+
 namespace CvManager.Model
 {
     public class Education
@@ -8,6 +10,7 @@ namespace CvManager.Model
         public string StartDate { get; set; }
         public string EndDate { get; set; }
         public string Institute { get; set; }
+        [AllowHtml]
         public string Details { get; set; }
     }
 }

@@ -1,0 +1,16 @@
+﻿@model CvManager.Model.Education
+           
+<div class="item">
+    <h3>
+        <span class="l">@Html.DisplayFor(m => m.Degree)</span>
+        <span class="r">@Html.DisplayFor(m => m.StartDate) — @Html.DisplayFor(m => m.EndDate)</span>
+    </h3>
+    <span class="clear">
+    </span>
+    <span class="school">@Html.DisplayFor(m => m.Institute)</span>
+    <span class="info">
+        @Html.Raw(Model.Details)<br><br>
+    </span>
+    <span class="clear">
+    </span>
+</div>

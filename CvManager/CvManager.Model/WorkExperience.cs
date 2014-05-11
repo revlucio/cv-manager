@@ -1,4 +1,6 @@
-﻿namespace CvManager.Model
+﻿using System.Web.Mvc;
+
+namespace CvManager.Model
 {
     public class WorkExperience
     {
@@ -8,6 +10,7 @@
         public string StartDate { get; set; }
         public string EndDate { get; set; }
         public string JobTitle { get; set; }
+        [AllowHtml]
         public string Details { get; set; }
     }
 }

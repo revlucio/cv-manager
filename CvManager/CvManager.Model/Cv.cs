@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace CvManager.Model
 {
@@ -14,9 +15,11 @@ namespace CvManager.Model
 
         public List<Education> Educations { get; set; }
         public List<WorkExperience> WorkExperiences { get; set; }
+        [AllowHtml]
         public string Fieldwork { get; set; }
         public List<Conference> Conferences { get; set; }
         public List<Achievement> Achievements { get; set; }
+        [AllowHtml]
         public string Skills { get; set; }
         public List<Reference> References { get; set; } 
     }

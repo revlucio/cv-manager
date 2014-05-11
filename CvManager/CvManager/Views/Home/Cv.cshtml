@@ -35,45 +35,18 @@
         <div class="section section-education">
             <h2 class="title">Education</h2>
             <div class="set">
-                @foreach (var item in Model.Educations)
+                @for (var i = 0; i < Model.Educations.Count; i++)
                 {
-                    <div class="item">
-                        <h3>
-                            <span class="l">@item.Degree</span>
-                            <span class="r">@item.StartDate — @item.EndDate</span>
-                        </h3>
-                        <span class="clear">
-                        </span>
-                        <span class="school">@item.Institute</span>
-                        <span class="info">
-                            @Html.Raw(item.Details)<br><br>
-                        </span>
-                        <span class="clear">
-                        </span>
-                    </div>
+                    @Html.DisplayFor(m => m.Educations[i])
                 }
             </div>
         </div>
         <div class="section section-work">
             <h2 class="title">Work experience</h2>
             <div class="set">
-                @foreach (var item in Model.WorkExperiences)
+                @for (var i = 0; i < Model.WorkExperiences.Count; i++)
                 {
-                    <div class="item">
-                        <h3>
-                            <span class="l">@item.Company</span>
-                            <span class="r">@item.StartDate — @item.EndDate</span>
-                        </h3>
-                        <span class="clear">
-                        </span>
-                        <span class="job_title">@item.JobTitle</span>
-                        <span class="info">
-                            @Html.Raw(item.Details)
-                            <br>
-                        </span>
-                        <span class="clear">
-                        </span>
-                    </div>
+                    @Html.DisplayFor(m => m.WorkExperiences[i])
                 }
             </div>
             <div class="clear">
@@ -97,9 +70,9 @@
                 <div class="item">
                     <span class="info">
                         <ul>
-                            @foreach (var item in Model.Achievements)
+                            @for (var i = 0; i < Model.Achievements.Count; i++)
                             {
-                                <li>@item.Name</li>
+                                @Html.DisplayFor(m => m.Achievements[i])
                             }
                         </ul>
                         <br><br>

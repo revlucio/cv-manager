@@ -26,7 +26,7 @@ namespace CvManager.Controllers
         {
             var repository = new CvRepository();
 
-            return View(repository.GetElizabethsCv());
+            return View(repository.SaveNewCv(cv));
         }
     }
 }

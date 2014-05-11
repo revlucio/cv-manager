@@ -131,6 +131,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Cv.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -157,6 +158,9 @@
     <Content Include="Views\Home\CvEdit.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Education.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\WorkExperience.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Education.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\WorkExperience.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Achievement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CvManager.Business\CvManager.Business.csproj">

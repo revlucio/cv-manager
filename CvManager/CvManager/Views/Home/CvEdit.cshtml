@@ -10,10 +10,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>@Model.FullName</title>
     <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Cv.css" rel="stylesheet" />
 </head>
 <body>
     @using (Html.BeginForm())
     {
+        @Html.HiddenFor(m => m.Id)
         <div id="main">
             <input type="submit" value="Submit"/>
 
@@ -48,23 +50,9 @@
             <div class="section section-work">
                 <h2 class="title">Work experience</h2>
                 <div class="set">
-                    @foreach (var item in Model.WorkExperiences)
+                    @for (var i = 0; i < Model.WorkExperiences.Count; i++)
                     {
-                        <div class="item">
-                            <h3>
-                                <span class="l">@item.Company</span>
-                                <span class="r">@item.StartDate — @item.EndDate</span>
-                            </h3>
-                            <span class="clear">
-                            </span>
-                            <span class="job_title">@item.JobTitle</span>
-                            <span class="info">
-                                @Html.Raw(item.Details)
-                                <br>
-                            </span>
-                            <span class="clear">
-                            </span>
-                        </div>
+                        @Html.EditorFor(m => m.WorkExperiences[i])
                     }
                 </div>
                 <div class="clear">
@@ -75,7 +63,7 @@
                 <div class="set">
                     <div class="item">
                         <span class="info">
-                            @Html.Raw(Model.Fieldwork)
+                            @Html.EditorFor(m => m.Fieldwork)
                         </span>
                     </div>
                 </div>
@@ -123,7 +111,7 @@
                 <div class="set">
                     <div class="item">
                         <span class="info">
-                            @Html.Raw(Model.Skills)
+                            @Html.EditorFor(m => m.Skills)
                         </span>
                     </div>
                 </div>
