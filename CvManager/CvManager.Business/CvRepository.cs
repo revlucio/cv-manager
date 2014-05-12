@@ -1,6 +1,6 @@
-using CvManager.Business;
 using System.Data.Entity;
 using System.Linq;
+using CvManager.Business;
 
 namespace CvManager.Model
 {
