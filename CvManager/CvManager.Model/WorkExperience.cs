@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace CvManager.Model
 {
@@ -10,7 +11,8 @@ namespace CvManager.Model
         public string StartDate { get; set; }
         public string EndDate { get; set; }
         public string JobTitle { get; set; }
-        [AllowHtml]
+
+        [UIHint("tinymce_basic"), AllowHtml]
         public string Details { get; set; }
     }
 }

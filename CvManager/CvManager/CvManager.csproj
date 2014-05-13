@@ -335,13 +335,10 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.eot" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
-    <Content Include="Views\Shared\EditorTemplates\tinymce_full_compressed.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\tinymce_full.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\tinymce_classic_compressed.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\tinymce_classic.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\c.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\tinymce_basic.cshtml" />
     <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <Content Include="Views\Shared\EditorTemplates\tinymce_basic.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\tinymce_basic_tall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CvManager.Business\CvManager.Business.csproj">

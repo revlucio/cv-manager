@@ -1,7 +1,7 @@
-﻿.l input, .school input, .info input {
+﻿.l input, .school input, .info input, .job_title input {
     width: 100%;
 }
 
-.mce-caret {
-    display: none;
+.mce-widget span {
+    display: inline;
 }
