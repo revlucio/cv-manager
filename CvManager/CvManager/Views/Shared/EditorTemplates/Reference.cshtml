@@ -1,0 +1,7 @@
+﻿@model CvManager.Model.Reference
+           
+<strong>@Html.EditorFor(m => m.FullName):</strong>
+<br/>@Html.EditorFor(m => m.Job)
+<br/>@Html.Raw("Phone:") @Html.EditorFor(m => m.PhoneNumber)
+<br/>@Html.Raw("Email:") @Html.EditorFor(m => m.Email)
+<br/><br/>

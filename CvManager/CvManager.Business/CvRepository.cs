@@ -1,6 +1,6 @@
+using CvManager.Business;
 using System.Data.Entity;
 using System.Linq;
-using CvManager.Business;
 
 namespace CvManager.Model
 {
@@ -28,7 +28,16 @@ namespace CvManager.Model
         {
             var cv = GetElizabethsCv();
 
+            cv.Email = newCv.Email;
+            cv.Website = newCv.Website;
+            cv.PhoneNumber = newCv.PhoneNumber;
+
             cv.Educations = newCv.Educations;
+            cv.WorkExperiences = newCv.WorkExperiences;
+            cv.Achievements = newCv.Achievements;
+            cv.Skills = newCv.Skills;
+            cv.Fieldwork = newCv.Fieldwork;
+            cv.Conferences = newCv.Conferences;
 
             _context.SaveChanges();
 

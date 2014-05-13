@@ -6,6 +6,16 @@ namespace CvManager.Model.Tests
     public class CvRepository_Tests
     {
         [Test]
+        public void AddCv()
+        {
+            // ARRANGE
+            var repository = new CvRepository();
+
+            // ACT
+            repository.CreateNewCv();
+        }
+
+        [Test]
         public void GetElizabethsCv_ReturnsCv()
         {
             // ARRANGE

@@ -88,9 +88,9 @@
                 <div class="item">
                     <span class="info">
                         <ul>
-                            @foreach (var item in Model.Conferences)
+                            @for (var i = 0; i < Model.Conferences.Count; i++)
                             {
-                                <li>@item.Name</li>
+                                @Html.DisplayFor(m => m.Conferences[i])
                             }
                         </ul>
                         <br><br>
@@ -117,13 +117,9 @@
             <div class="set">
                 <div class="item">
                     <span class="info">
-                        @foreach (var item in Model.References)
+                        @for (var i = 0; i < Model.References.Count; i++)
                         {
-                            <strong>@item.FullName:</strong>
-                            <br/>@item.Job 
-                            <br/>@Html.Raw("Phone:") @item.PhoneNumber
-                            <br/>@Html.Raw("Email:") @item.Email
-                            <br/><br/>
+                            @Html.DisplayFor(m => m.References[i])
                         }
                     </span>
                 </div>
