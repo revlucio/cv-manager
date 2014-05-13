@@ -1,3 +1,7 @@
 ﻿.l input, .school input, .info input {
     width: 100%;
 }
+
+.mce-caret {
+    display: none;
+}
