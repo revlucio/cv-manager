@@ -1,0 +1,8 @@
+﻿@using System.Collections.Generic;
+@model List<CvManager.Model.Achievement>
+           
+@for (var i = 0; i < Model.Count; i++)
+{
+    @Html.EditorFor(m => m[i])
+}
+

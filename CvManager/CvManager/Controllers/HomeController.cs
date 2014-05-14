@@ -17,8 +17,11 @@ namespace CvManager.Controllers
         public ViewResult CvEdit()
         {
             var repository = new CvRepository();
+            var cv = repository.GetElizabethsCv();
 
-            return View(repository.GetElizabethsCv());
+            TempData["AchievementId"] = cv.Achievements.Count;
+
+            return View(cv);
         }
 
         [HttpPost]
@@ -26,7 +29,28 @@ namespace CvManager.Controllers
         {
             var repository = new CvRepository();
 
+            TempData["AchievementId"] = cv.Achievements.Count;
+
             return View(repository.SaveNewCv(cv));
+        }
+
+
+        [HttpGet]
+        public ActionResult AddAchievement()
+        {
+            var id = int.Parse(TempData["AchievementId"].ToString());
+
+            TempData["AchievementId"] = id + 1;
+
+            return PartialView("~/Views/Shared/_Achievement.cshtml", new Achievement { Id = id });
+        }
+
+        [HttpPost]
+        public ActionResult AddAchievement(Cv cv)
+        {
+            cv.Achievements.Add(new Achievement());
+            
+            return PartialView("~/Views/Shared/EditorTemplates/AchievementList.cshtml", cv.Achievements);
         }
     }
 }

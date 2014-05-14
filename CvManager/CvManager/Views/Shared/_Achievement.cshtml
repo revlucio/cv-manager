@@ -1,0 +1,10 @@
+﻿@model CvManager.Model.Achievement
+           
+<li>
+    <input 
+        id="@(string.Format("Achievements_{0}__Name", Model.Id))"
+        class="text-box single-line" 
+        type="text" 
+        value="" 
+        name="@(string.Format("Achievements[{0}].Name", Model.Id))">
+</li>

@@ -13,6 +13,22 @@
     <link href="~/Content/Cv.css" rel="stylesheet" />
     
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryajax")
+
+    <script type="text/javascript">
+        $(function () {
+            $('#addAchievement').on('click', function () {
+                $.ajax({
+                    url: '@Url.Action("AddAchievement", "Home")',
+                    data: $('form').serializeArray(),
+                    type: 'POST',
+                    success: function(result) {
+                        $('#achievements').html(result);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     @using (Html.BeginForm())
@@ -77,12 +93,10 @@
                 <div class="set">
                     <div class="item">
                         <span class="info">
-                            <ul>
-                                @for (var i = 0; i < Model.Achievements.Count; i++)
-                                {
-                                    @Html.EditorFor(m => m.Achievements[i])
-                                }
+                            <ul id="achievements">
+                                @Html.EditorFor(m => m.Achievements, "AchievementsList")
                             </ul>
+                            <input type="button" value="add" id="addAchievement"/>
                             <br><br>
                         </span>
                     </div>
