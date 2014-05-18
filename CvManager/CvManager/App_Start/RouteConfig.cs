@@ -10,7 +10,13 @@ namespace CvManager
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "DefaultHome",
+                name: "CvEdit",
+                url: "Cv/Edit",
+                defaults: new { controller = "Home", action = "CvEdit" }
+            );
+
+            routes.MapRoute(
+                name: "Default",
                 url: "{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );

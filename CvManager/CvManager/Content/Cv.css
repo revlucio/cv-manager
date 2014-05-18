@@ -1,7 +1,15 @@
-﻿.l input, .school input, .info input, .job_title input {
+﻿.l input, .school input, .job_title input {
     width: 100%;
 }
 
 .mce-widget span {
     display: inline;
+}
+
+#achievements .text-box {
+    width: 80%;
+}
+
+#achievements .removeA {
+    width: 10%
 }

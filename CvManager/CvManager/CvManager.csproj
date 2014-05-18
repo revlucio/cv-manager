@@ -324,7 +324,6 @@
     <Content Include="Views\Shared\DisplayTemplates\Education.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\WorkExperience.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Achievement.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Achievement.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Conference.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Conference.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Reference.cshtml" />
@@ -346,6 +345,8 @@
     <Content Include="Views\Shared\_Achievement.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\AchievementList.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EducationList.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\WorkExperienceList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CvManager.Business\CvManager.Business.csproj">

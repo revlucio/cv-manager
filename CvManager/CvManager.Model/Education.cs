@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -14,5 +15,14 @@ namespace CvManager.Model
 
         [UIHint("tinymce_basic"), AllowHtml]
         public string Details { get; set; }
+
+        public Education()
+        {
+            Degree = "test";
+            StartDate = String.Empty;
+            EndDate = String.Empty;
+            Institute = String.Empty;
+            Details = String.Empty;
+        }
     }
 }

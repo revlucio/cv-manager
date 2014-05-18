@@ -51,5 +51,43 @@ namespace CvManager.Controllers
 
             return PartialView("~/Views/Shared/EditorTemplates/AchievementList.cshtml", cv);
         }
+
+        [HttpPost]
+        public ActionResult AddEducation(Cv cv)
+        {
+            cv.Educations.Add(new Education());
+
+            return PartialView("~/Views/Shared/EditorTemplates/EducationList.cshtml", cv);
+        }
+
+        [HttpGet]
+        public ActionResult RemoveEducation(int id)
+        {
+            var repository = new CvRepository();
+            var cv = repository.GetElizabethsCv();
+            cv.Educations.RemoveAt(id);
+            repository.SaveNewCv(cv);
+
+            return PartialView("~/Views/Shared/EditorTemplates/EducationList.cshtml", cv);
+        }
+
+        [HttpPost]
+        public ActionResult AddWorkExperience(Cv cv)
+        {
+            cv.WorkExperiences.Add(new WorkExperience());
+
+            return PartialView("~/Views/Shared/EditorTemplates/WorkExperienceList.cshtml", cv);
+        }
+
+        [HttpGet]
+        public ActionResult RemoveWorkExperience(int id)
+        {
+            var repository = new CvRepository();
+            var cv = repository.GetElizabethsCv();
+            cv.WorkExperiences.RemoveAt(id);
+            repository.SaveNewCv(cv);
+
+            return PartialView("~/Views/Shared/EditorTemplates/WorkExperienceList.cshtml", cv);
+        }
     }
 }
