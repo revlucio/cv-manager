@@ -135,6 +135,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\test.elknox.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\Custom\editCv.js" />
@@ -344,6 +345,7 @@
     <Content Include="Views\Shared\EditorTemplates\tinymce_basic_tall.cshtml" />
     <Content Include="Views\Shared\_Achievement.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\AchievementList.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CvManager.Business\CvManager.Business.csproj">

@@ -5,7 +5,11 @@ namespace CvManager.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpGet]
+        public ViewResult Index()
+        {
+            return View();
+        }
+
         public ViewResult Cv()
         {
             var repository = new CvRepository();
@@ -13,7 +17,6 @@ namespace CvManager.Controllers
             return View(repository.GetElizabethsCv());
         }
 
-        [HttpGet]
         public ViewResult CvEdit()
         {
             var repository = new CvRepository();
