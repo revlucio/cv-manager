@@ -5,6 +5,13 @@ namespace CvManager.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly CvRepository _repository;
+
+        public HomeController()
+        {
+            _repository = new CvRepository();
+        }
+
         public ViewResult Index()
         {
             return View();
@@ -12,15 +19,12 @@ namespace CvManager.Controllers
 
         public ViewResult Cv()
         {
-            var repository = new CvRepository();
-
-            return View(repository.GetElizabethsCv());
+            return View(_repository.GetElizabethsCv());
         }
 
         public ViewResult CvEdit()
         {
-            var repository = new CvRepository();
-            var cv = repository.GetElizabethsCv();
+            var cv = _repository.GetElizabethsCv();
 
             return View(cv);
         }
@@ -28,9 +32,7 @@ namespace CvManager.Controllers
         [HttpPost]
         public ViewResult CvEdit(Cv cv)
         {
-            var repository = new CvRepository();
-
-            return View(repository.SaveNewCv(cv));
+            return View(_repository.SaveNewCv(cv));
         }
 
         [HttpPost]
@@ -44,10 +46,9 @@ namespace CvManager.Controllers
         [HttpGet]
         public ActionResult RemoveAchievement(int id)
         {
-            var repository = new CvRepository();
-            var cv = repository.GetElizabethsCv();
+            var cv = _repository.GetElizabethsCv();
             cv.Achievements.RemoveAt(id);
-            repository.SaveNewCv(cv);
+            _repository.SaveNewCv(cv);
 
             return PartialView("~/Views/Shared/EditorTemplates/AchievementList.cshtml", cv);
         }
@@ -63,10 +64,9 @@ namespace CvManager.Controllers
         [HttpGet]
         public ActionResult RemoveEducation(int id)
         {
-            var repository = new CvRepository();
-            var cv = repository.GetElizabethsCv();
+            var cv = _repository.GetElizabethsCv();
             cv.Educations.RemoveAt(id);
-            repository.SaveNewCv(cv);
+            _repository.SaveNewCv(cv);
 
             return PartialView("~/Views/Shared/EditorTemplates/EducationList.cshtml", cv);
         }
@@ -82,12 +82,47 @@ namespace CvManager.Controllers
         [HttpGet]
         public ActionResult RemoveWorkExperience(int id)
         {
-            var repository = new CvRepository();
-            var cv = repository.GetElizabethsCv();
+            var cv = _repository.GetElizabethsCv();
             cv.WorkExperiences.RemoveAt(id);
-            repository.SaveNewCv(cv);
+            _repository.SaveNewCv(cv);
 
             return PartialView("~/Views/Shared/EditorTemplates/WorkExperienceList.cshtml", cv);
+        }
+
+        [HttpPost]
+        public ActionResult AddConference(Cv cv)
+        {
+            cv.Conferences.Add(new Conference());
+
+            return PartialView("~/Views/Shared/EditorTemplates/ConferenceList.cshtml", cv);
+        }
+
+        [HttpGet]
+        public ActionResult RemoveConference(int id)
+        {
+            var cv = _repository.GetElizabethsCv();
+            cv.Conferences.RemoveAt(id);
+            _repository.SaveNewCv(cv);
+
+            return PartialView("~/Views/Shared/EditorTemplates/ConferenceList.cshtml", cv);
+        }
+
+        [HttpPost]
+        public ActionResult AddReference(Cv cv)
+        {
+            cv.References.Add(new Reference());
+
+            return PartialView("~/Views/Shared/EditorTemplates/ReferenceList.cshtml", cv);
+        }
+
+        [HttpGet]
+        public ActionResult RemoveReference(int id)
+        {
+            var cv = _repository.GetElizabethsCv();
+            cv.References.RemoveAt(id);
+            _repository.SaveNewCv(cv);
+
+            return PartialView("~/Views/Shared/EditorTemplates/ReferenceList.cshtml", cv);
         }
     }
 }

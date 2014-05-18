@@ -38,6 +38,7 @@ namespace CvManager.Model
             cv.Skills = newCv.Skills;
             cv.Fieldwork = newCv.Fieldwork;
             cv.Conferences = newCv.Conferences;
+            cv.References = newCv.References;
 
             _context.SaveChanges();
 

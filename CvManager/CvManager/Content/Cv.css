@@ -6,10 +6,10 @@
     display: inline;
 }
 
-#achievements .text-box {
+#achievements .text-box, #conferences .text-box {
     width: 80%;
 }
 
-#achievements .removeA {
+#achievements .removeA, #conferences .removeA {
     width: 10%
 }

@@ -65,6 +65,24 @@
                 var index = $(this).data('val');
                 removeFromSection('@Url.Action("RemoveWorkExperience", "Home")' + '/' + index, '#workExperience');
             });
+
+            $('#addConference').on('click', function () {
+                addToSection('@Url.Action("AddConference", "Home")', '#conferences');
+            });
+
+            $('#conferences').delegate('.removeA', 'click', function () {
+                var index = $(this).data('val');
+                removeFromSection('@Url.Action("RemoveConference", "Home")' + '/' + index, '#conferences');
+            });
+
+            $('#addReference').on('click', function () {
+                addToSection('@Url.Action("AddReference", "Home")', '#references');
+            });
+
+            $('#references').delegate('.removeA', 'click', function () {
+                var index = $(this).data('val');
+                removeFromSection('@Url.Action("RemoveReference", "Home")' + '/' + index, '#references');
+            });
         });
     </script>
 </head>
@@ -143,12 +161,10 @@
                 <div class="set">
                     <div class="item">
                         <span class="info">
-                            <ul>
-                                @for (var i = 0; i < Model.Conferences.Count; i++)
-                                {
-                                    @Html.EditorFor(m => m.Conferences[i])
-                                }
+                            <ul id="conferences">
+                                @Html.Partial("EditorTemplates/ConferenceList", Model)
                             </ul>
+                            <input type="button" value="add" id="addConference" />
                             <br><br>
                         </span>
                     </div>
@@ -172,12 +188,10 @@
                 <h2 class="title">References</h2>
                 <div class="set">
                     <div class="item">
-                        <span class="refs">
-                            @for (var i = 0; i < Model.References.Count; i++)
-                            {
-                                @Html.EditorFor(m => m.References[i])
-                            }
-                        </span>
+                        <input type="button" value="add" id="addReference" />
+                        <div class="set" id="references">
+                            @Html.Partial("EditorTemplates/ReferenceList", Model)
+                        </div>
                     </div>
                 </div>
                 <div class="clear">
