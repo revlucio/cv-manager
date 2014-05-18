@@ -19,8 +19,6 @@ namespace CvManager.Controllers
             var repository = new CvRepository();
             var cv = repository.GetElizabethsCv();
 
-            TempData["AchievementId"] = cv.Achievements.Count;
-
             return View(cv);
         }
 
@@ -29,20 +27,7 @@ namespace CvManager.Controllers
         {
             var repository = new CvRepository();
 
-            TempData["AchievementId"] = cv.Achievements.Count;
-
             return View(repository.SaveNewCv(cv));
-        }
-
-
-        [HttpGet]
-        public ActionResult AddAchievement()
-        {
-            var id = int.Parse(TempData["AchievementId"].ToString());
-
-            TempData["AchievementId"] = id + 1;
-
-            return PartialView("~/Views/Shared/_Achievement.cshtml", new Achievement { Id = id });
         }
 
         [HttpPost]
@@ -50,7 +35,18 @@ namespace CvManager.Controllers
         {
             cv.Achievements.Add(new Achievement());
             
-            return PartialView("~/Views/Shared/EditorTemplates/AchievementList.cshtml", cv.Achievements);
+            return PartialView("~/Views/Shared/EditorTemplates/AchievementList.cshtml", cv);
+        }
+
+        [HttpGet]
+        public ActionResult RemoveAchievement(int id)
+        {
+            var repository = new CvRepository();
+            var cv = repository.GetElizabethsCv();
+            cv.Achievements.RemoveAt(id);
+            repository.SaveNewCv(cv);
+
+            return PartialView("~/Views/Shared/EditorTemplates/AchievementList.cshtml", cv);
         }
     }
 }

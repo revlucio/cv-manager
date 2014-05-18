@@ -28,11 +28,9 @@
                 });
             });
 
-            $('#achievements').delegate('.removeA', 'click', function () {
-                var index = $(this).data('val');
-
+            $('.removeA').on('click', function () {
                 $.ajax({
-                    url: '@Url.Action("RemoveAchievement", "Home")' + '/' + index,
+                    url: '@Url.Action("RemoveAchievement", "Home")' + '/5' ,
                     type: 'GET',
                     success: function (result) {
                         $('#achievements').html(result);
@@ -106,7 +104,10 @@
                     <div class="item">
                         <span class="info">
                             <ul id="achievements">
-                                @Html.Partial("EditorTemplates/AchievementList", Model)
+                                @for (var i = 0; i < Model.Achievements.Count; i++)
+                                {
+                                    @Html.EditorFor(m => m.Achievements[i])
+                                }
                             </ul>
                             <input type="button" value="add" id="addAchievement"/>
                             <br><br>

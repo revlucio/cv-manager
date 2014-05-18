@@ -24,6 +24,8 @@ namespace CvManager
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryajax").Include("~/Scripts/jquery.unobtrusive*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/editCv").Include("~/Scripts/Custom/editCv.js"));
         }
     }
 }
