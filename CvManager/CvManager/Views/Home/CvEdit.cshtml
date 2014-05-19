@@ -83,12 +83,21 @@
                 var index = $(this).data('val');
                 removeFromSection('@Url.Action("RemoveReference", "Home")' + '/' + index, '#references');
             });
+            
+            showHide('#showHideEducation', '#education');
+            showHide('#showHideWorkExperience', '#workExperience');
+            showHide('#showHideFieldwork', '#fieldwork');
+            showHide('#showHideAchievements', '#achievements');
+            showHide('#showHideConferences', '#conferences');
+            showHide('#showHideSkills', '#skills');
+            showHide('#showHideReferences', '#references');
 
-            $('#showHideEducation').on('click', function() {
-                $('#education').toggle();
-            });
-
-            $('#education').hide();
+            function showHide(button, id) {
+                $(id).hide();
+                $(button).on('click', function () {
+                    $(id).toggle();
+                });
+            }
         });
     </script>
 </head>
@@ -132,8 +141,9 @@
             <div class="section section-work">
                 <h2 class="title">
                     Work experience
+                    <input type="button" value="Add Work Experience" id="addWorkExperience" />
+                    <input type="button" value="Show/Hide" id="showHideWorkExperience" />
                 </h2>
-                <input type="button" value="add" id="addWorkExperience" />
 
                 <div class="set" id="workExperience">
                     @Html.Partial("EditorTemplates/WorkExperienceList", Model)
@@ -142,8 +152,11 @@
                 </div>
             </div>
             <div class="section section-interests">
-                <h2 class="title">Field Work and Practical Experience</h2>
-                <div class="set">
+                <h2 class="title">
+                    Field Work and Practical Experience
+                    <input type="button" value="Show/Hide" id="showHideFieldwork" />
+                </h2>
+                <div class="set" id="fieldwork">
                     <div class="item">
                         <span class="info">
                             @Html.EditorFor(m => m.Fieldwork)
@@ -153,41 +166,49 @@
                 <div class="clear">
                 </div>
             </div>
-            <div class="section section-1392497042317">
-                <h2 class="title">Committees and Achievements</h2>
+            <div class="section">
+                <h2 class="title">
+                    Committees and Achievements
+                    <input type="button" value="Add Achievment" id="addAchievement" />
+                    <input type="button" value="Show/Hide" id="showHideAchievements" />
+                </h2>
+
                 <div class="set">
                     <div class="item">
                         <span class="info">
                             <ul id="achievements">
                                 @Html.Partial("EditorTemplates/AchievementList", Model)
                             </ul>
-                            <input type="button" value="add" id="addAchievement"/>
-                            <br><br>
                         </span>
                     </div>
                 </div>
                 <div class="clear">
                 </div>
             </div>
-            <div class="section section-1392497124818">
-                <h2 class="title">Conferences</h2>
+            <div class="section">
+                <h2 class="title">
+                    Conferences
+                    <input type="button" value="Add Conference" id="addConference" />
+                    <input type="button" value="Show/Hide" id="showHideConferences" />
+                </h2>
                 <div class="set">
                     <div class="item">
                         <span class="info">
                             <ul id="conferences">
                                 @Html.Partial("EditorTemplates/ConferenceList", Model)
                             </ul>
-                            <input type="button" value="add" id="addConference" />
-                            <br><br>
                         </span>
                     </div>
                 </div>
                 <div class="clear">
                 </div>
             </div>
-            <div class="section section-1394453370588">
-                <h2 class="title">Aquired skills</h2>
-                <div class="set">
+            <div class="section">
+                <h2 class="title">
+                    Aquired skills
+                    <input type="button" value="Show/Hide" id="showHideSkills" />
+                </h2>
+                <div class="set" id="skills">
                     <div class="item">
                         <span class="info">
                             @Html.EditorFor(m => m.Skills)
@@ -197,11 +218,14 @@
                 <div class="clear">
                 </div>
             </div>
-            <div class="section section-references">
-                <h2 class="title">References</h2>
+            <div class="section">
+                <h2 class="title">
+                    References
+                    <input type="button" value="Add Reference" id="addReference" />
+                    <input type="button" value="Show/Hide" id="showHideReferences" />
+                </h2>
                 <div class="set">
                     <div class="item">
-                        <input type="button" value="add" id="addReference" />
                         <div class="set" id="references">
                             @Html.Partial("EditorTemplates/ReferenceList", Model)
                         </div>
