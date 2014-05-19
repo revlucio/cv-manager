@@ -133,19 +133,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\test.elknox.com - Web Deploy.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\Custom\editCv.js" />
-    <Content Include="Scripts\jquery-2.1.0.js" />
-    <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\tinymce\jquery.tinymce.min.js" />
     <Content Include="Scripts\tinymce\license.txt" />
     <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />
@@ -308,7 +299,6 @@
     <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
     <Content Include="Scripts\tinymce\tinymce.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -319,13 +309,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Cv.cshtml" />
     <Content Include="Views\Home\CvEdit.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\WorkExperience.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Education.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\WorkExperience.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Achievement.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Conference.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Reference.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Reference.cshtml" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.json" />
@@ -337,7 +325,6 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\Shared\EditorTemplates\c.cshtml" />
-    <Content Include="Scripts\jquery-2.1.0.min.map" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_basic.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_basic_tall.cshtml" />
     <Content Include="Views\Shared\_Achievement.cshtml" />
