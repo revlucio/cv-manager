@@ -83,6 +83,12 @@
                 var index = $(this).data('val');
                 removeFromSection('@Url.Action("RemoveReference", "Home")' + '/' + index, '#references');
             });
+
+            $('#showHideEducation').on('click', function() {
+                $('#education').toggle();
+            });
+
+            $('#education').hide();
         });
     </script>
 </head>
@@ -113,15 +119,22 @@
             </div>
             <!-- basic-info //-->
             <div class="section section-education">
-                <h2 class="title">Education</h2>
-                <input type="button" value="add" id="addEducation" />
+                <h2 class="title">
+                    Education
+                    <input type="button" value="Add Education Item" id="addEducation" />
+                    <input type="button" value="Show/Hide" id="showHideEducation" />
+                </h2>
+                
                 <div class="set" id="education">
                     @Html.Partial("EditorTemplates/EducationList", Model)
                 </div>
             </div>
             <div class="section section-work">
-                <h2 class="title">Work experience</h2>
+                <h2 class="title">
+                    Work experience
+                </h2>
                 <input type="button" value="add" id="addWorkExperience" />
+
                 <div class="set" id="workExperience">
                     @Html.Partial("EditorTemplates/WorkExperienceList", Model)
                 </div>

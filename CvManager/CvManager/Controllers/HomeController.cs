@@ -32,7 +32,9 @@ namespace CvManager.Controllers
         [HttpPost]
         public ViewResult CvEdit(Cv cv)
         {
-            return View(_repository.SaveNewCv(cv));
+            var newCv = _repository.SaveNewCv(cv);
+
+            return View(newCv);
         }
 
         [HttpPost]

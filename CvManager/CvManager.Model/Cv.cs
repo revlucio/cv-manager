@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace CvManager.Model
@@ -25,6 +26,11 @@ namespace CvManager.Model
 
         public List<Conference> Conferences { get; set; }
         public List<Achievement> Achievements { get; set; }
-        public List<Reference> References { get; set; } 
+        public List<Reference> References { get; set; }
+
+        public List<Education> GetOrderedEducations()
+        {
+            return Educations.OrderByDescending(e => e.ConvertEndTime()).ToList();
+        }
     }
 }

@@ -15,13 +15,17 @@ namespace CvManager.Model
 
         public Cv GetElizabethsCv()
         {
-            return _context.Cvs
+            var lizsCv = _context.Cvs
                 .Include(cv => cv.Achievements)
                 .Include(cv => cv.Educations)
                 .Include(cv => cv.WorkExperiences)
                 .Include(cv => cv.Conferences)
                 .Include(cv => cv.References)
                 .First(cv => cv.FullName == "Elizabeth L. Knox");
+
+            lizsCv.Educations = lizsCv.Educations.OrderByDescending(e => e.ConvertEndTime()).ToList();
+
+            return lizsCv;
         }
 
         public Cv SaveNewCv(Cv newCv)

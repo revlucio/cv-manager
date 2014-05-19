@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Web.Mvc;
 
 namespace CvManager.Model
@@ -16,13 +17,12 @@ namespace CvManager.Model
         [UIHint("tinymce_basic"), AllowHtml]
         public string Details { get; set; }
 
-        public Education()
+        public DateTime ConvertEndTime()
         {
-            Degree = "test";
-            StartDate = String.Empty;
-            EndDate = String.Empty;
-            Institute = String.Empty;
-            Details = String.Empty;
+            DateTime endDate;
+            var parsed = DateTime.TryParse(EndDate, null, DateTimeStyles.None, out endDate);
+
+            return parsed ? endDate : DateTime.MinValue;
         }
     }
 }

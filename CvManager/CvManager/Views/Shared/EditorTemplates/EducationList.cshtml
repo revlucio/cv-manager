@@ -2,6 +2,26 @@
 
 @for (var i = 0; i < Model.Educations.Count; i++)
 {
-    @Html.EditorFor(m => m.Educations[i])
-    <input type="button" value="remove" class="removeA" data-val="@i">
+    <div class="item">
+        <h3>
+            <span class="l">@Html.TextBoxFor(m => m.Educations[i].Degree, new { placeholder = "Degree" })</span>
+            <span class="r">
+                @Html.TextBoxFor(m => m.Educations[i].StartDate, new { placeholder = "StartDate" })
+                &nbsp;—&nbsp;
+                @Html.TextBoxFor(m => m.Educations[i].EndDate, new { placeholder = "EndDate" })
+            </span>
+        </h3>
+        <span class="clear">
+        </span>
+        <div class="school">@Html.TextBoxFor(m => m.Educations[i].Institute, new { placeholder = "Institute" })</div>
+        <span class="info">
+            @Html.EditorFor(m => m.Educations[i].Details, new { placeholder = "Details" })
+        </span>
+        
+        <input type="button" value="Remove @Model.Educations[i].Degree" class="removeA" data-val="@i">
+
+        <span class="clear">
+        </span>
+    </div>
+
 }
