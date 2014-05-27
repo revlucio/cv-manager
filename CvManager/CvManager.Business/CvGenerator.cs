@@ -1,4 +1,5 @@
 ﻿using CvManager.Model;
+using System;
 using System.Collections.Generic;
 
 namespace CvManager.Business
@@ -21,6 +22,7 @@ namespace CvManager.Business
                 Achievements = GetAchievements(),
                 References = GetReferences(),
                 Skills = GetSkills(),
+                LastModifiedDateTime = DateTime.Now,
              };
         }
 

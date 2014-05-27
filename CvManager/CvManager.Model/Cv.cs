@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -27,6 +28,9 @@ namespace CvManager.Model
         public List<Conference> Conferences { get; set; }
         public List<Achievement> Achievements { get; set; }
         public List<Reference> References { get; set; }
+
+        public bool IsLive { get; set; }
+        public DateTime LastModifiedDateTime { get; set; }
 
         public List<Education> GetOrderedEducations()
         {

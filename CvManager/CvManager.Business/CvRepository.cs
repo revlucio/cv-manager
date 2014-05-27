@@ -1,4 +1,6 @@
 using CvManager.Business;
+using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -21,7 +23,8 @@ namespace CvManager.Model
                 .Include(cv => cv.WorkExperiences)
                 .Include(cv => cv.Conferences)
                 .Include(cv => cv.References)
-                .First(cv => cv.FullName == "Elizabeth L. Knox");
+                .OrderByDescending(cv => cv.LastModifiedDateTime)
+                .First(cv => cv.IsLive);
 
             lizsCv.Educations = lizsCv.Educations.OrderByDescending(e => e.ConvertEndTime()).ToList();
 
@@ -30,23 +33,26 @@ namespace CvManager.Model
 
         public Cv SaveNewCv(Cv newCv)
         {
-            var cv = GetElizabethsCv();
+            newCv.LastModifiedDateTime = DateTime.Now;
+            newCv.IsLive = true;
 
-            cv.Email = newCv.Email;
-            cv.Website = newCv.Website;
-            cv.PhoneNumber = newCv.PhoneNumber;
-
-            cv.Educations = newCv.Educations;
-            cv.WorkExperiences = newCv.WorkExperiences;
-            cv.Achievements = newCv.Achievements;
-            cv.Skills = newCv.Skills;
-            cv.Fieldwork = newCv.Fieldwork;
-            cv.Conferences = newCv.Conferences;
-            cv.References = newCv.References;
+            _context.Entry(newCv).State = EntityState.Modified;
+            UpdateItems(newCv.Educations);
+            UpdateItems(newCv.Achievements);
+            UpdateItems(newCv.References);
+            UpdateItems(newCv.WorkExperiences);
+            UpdateItems(newCv.Conferences);
 
             _context.SaveChanges();
+            return newCv;
+        }
 
-            return cv;
+        private void UpdateItems<T>(IEnumerable<T> items) where T : class
+        {
+            foreach (var item in items)
+            {
+                _context.Entry(item).State = EntityState.Modified;
+            }
         }
 
         public void CreateNewCv()

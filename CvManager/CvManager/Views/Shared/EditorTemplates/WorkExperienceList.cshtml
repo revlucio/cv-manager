@@ -4,6 +4,7 @@
 {
     <div class="item">
         <h3>
+            @Html.HiddenFor(m => m.WorkExperiences[i].Id)
             <span class="l">@Html.TextBoxFor(m => m.WorkExperiences[i].Company, new { placeholder = "Company" })</span>
             <span class="r">
                 @Html.TextBoxFor(m => m.WorkExperiences[i].StartDate, new { placeholder = "StartDate" })

@@ -3,6 +3,7 @@
 @for (var i = 0; i < Model.References.Count; i++)
 {
     <div class="item">
+        @Html.HiddenFor(m => m.References[i].Id)
         <strong>@Html.TextBoxFor(m => m.References[i].FullName, new { placeholder = "FullName" }):</strong>
         <div>@Html.TextBoxFor(m => m.References[i].Job, new { placeholder = "Job" })</div>
         <div>@Html.Raw("Phone:") @Html.TextBoxFor(m => m.References[i].PhoneNumber, new { placeholder = "PhoneNumber" })</div>
