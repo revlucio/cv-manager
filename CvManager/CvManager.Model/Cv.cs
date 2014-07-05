@@ -32,6 +32,17 @@ namespace CvManager.Model
         public bool IsLive { get; set; }
         public DateTime LastModifiedDateTime { get; set; }
 
+        public Cv()
+        {
+            Educations = new List<Education>();
+            Conferences = new List<Conference>();
+            WorkExperiences = new List<WorkExperience>();
+            Achievements = new List<Achievement>();
+            References = new List<Reference>();
+            Fieldwork = String.Empty;
+            Skills = String.Empty;
+        }
+
         public List<Education> GetOrderedEducations()
         {
             return Educations.OrderByDescending(e => e.ConvertEndTime()).ToList();

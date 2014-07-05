@@ -24,9 +24,11 @@ namespace CvManager.Model
                 .Include(cv => cv.Conferences)
                 .Include(cv => cv.References)
                 .OrderByDescending(cv => cv.LastModifiedDateTime)
-                .First(cv => cv.IsLive);
+                .FirstOrDefault(cv => cv.IsLive);
 
-            lizsCv.Educations = lizsCv.Educations.OrderByDescending(e => e.ConvertEndTime()).ToList();
+            //lizsCv.Educations = lizsCv.Educations.OrderByDescending(e => e.ConvertEndTime()).ToList();
+
+            lizsCv = lizsCv ?? new Cv();
 
             return lizsCv;
         }

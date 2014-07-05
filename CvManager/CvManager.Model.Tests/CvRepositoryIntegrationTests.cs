@@ -3,7 +3,8 @@
 namespace CvManager.Model.Tests
 {
     [TestFixture]
-    public class CvRepository_Tests
+    [Ignore]
+    public class CvRepositoryIntegrationTests
     {
         [Test]
         public void AddCv()

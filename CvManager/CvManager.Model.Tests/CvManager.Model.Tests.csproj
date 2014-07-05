@@ -72,7 +72,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CvRepository_Tests.cs" />
+    <Compile Include="CvRepositoryIntegrationTests.cs" />
+    <Compile Include="CvRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

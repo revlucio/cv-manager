@@ -109,6 +109,7 @@
             <input type="submit" value="Submit"/>
 
             <h1 id="title">@Model.FullName</h1>
+            @Html.HiddenFor(m => m.FullName)
             <div class="basic-info section">
                 <div class="set">
                     <p>
