@@ -1,9 +1,7 @@
 namespace CvManager.Model
 {
-    public class Reference
+    public class Reference : CvSection
     {
-        public int Id { get; set; }
-
         public string FullName { get; set; }
         public string Job { get; set; }
         public string PhoneNumber { get; set; }

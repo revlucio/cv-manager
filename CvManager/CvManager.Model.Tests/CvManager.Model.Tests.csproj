@@ -73,6 +73,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CvRepositoryIntegrationTests.cs" />
+    <Compile Include="CvRepositorySaveTests.cs" />
     <Compile Include="CvRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

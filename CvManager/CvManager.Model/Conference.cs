@@ -1,9 +1,7 @@
 namespace CvManager.Model
 {
-    public class Conference
+    public class Conference : CvSection
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
     }
 }

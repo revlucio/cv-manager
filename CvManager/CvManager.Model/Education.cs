@@ -5,10 +5,8 @@ using System.Web.Mvc;
 
 namespace CvManager.Model
 {
-    public class Education
+    public class Education : CvSection
     {
-        public int Id { get; set; }
-
         public string Degree { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }

@@ -1,9 +1,7 @@
 namespace CvManager.Model
 {
-    public class Achievement
+    public class Achievement : CvSection
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
     }
 }

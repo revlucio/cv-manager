@@ -6,92 +6,56 @@ namespace CvManager.Model.Tests
     [Ignore]
     public class CvRepositoryIntegrationTests
     {
+        private CvRepository _repository;
+        private Cv _cv;
+
+        [SetUp]
+        public void BeforeEachTest()
+        {
+            _repository = new CvRepository();
+            _cv = _repository.GetElizabethsCv();
+        }
+
         [Test]
         public void AddCv()
         {
-            // ARRANGE
-            var repository = new CvRepository();
-
-            // ACT
-            repository.CreateNewCv();
+            _repository.CreateNewCv();
         }
 
         [Test]
         public void GetElizabethsCv_ReturnsCv()
         {
-            // ARRANGE
-            var repository = new CvRepository();
-
-            // ACT
-            var cv = repository.GetElizabethsCv();
-
-            // ASSERT
-            Assert.That(cv, Is.Not.Null);
+            Assert.That(_cv, Is.Not.Null);
         }
 
         [Test]
         public void GetElizabethsCv_HasEducations()
         {
-            // ARRANGE
-            var repository = new CvRepository();
-
-            // ACT
-            var cv = repository.GetElizabethsCv();
-
-            // ASSERT
-            Assert.That(cv.Educations, Is.Not.Null);
+            Assert.That(_cv.Educations, Is.Not.Null);
         }
 
         [Test]
         public void GetElizabethsCv_HasConferences()
         {
-            // ARRANGE
-            var repository = new CvRepository();
-
-            // ACT
-            var cv = repository.GetElizabethsCv();
-
-            // ASSERT
-            Assert.That(cv.Conferences, Is.Not.Null);
+            Assert.That(_cv.Conferences, Is.Not.Null);
         }
 
         [Test]
         public void GetElizabethsCv_HasAchievements()
         {
-            // ARRANGE
-            var repository = new CvRepository();
-
-            // ACT
-            var cv = repository.GetElizabethsCv();
-
-            // ASSERT
-            Assert.That(cv.Achievements, Is.Not.Null);
+            Assert.That(_cv.Achievements, Is.Not.Null);
         }
 
         [Test]
         public void GetElizabethsCv_HasReferences()
         {
-            // ARRANGE
-            var repository = new CvRepository();
-
-            // ACT
-            var cv = repository.GetElizabethsCv();
-
-            // ASSERT
-            Assert.That(cv.References, Is.Not.Null);
+            Assert.That(_cv.References, Is.Not.Null);
         }
 
         [Test]
         public void GetElizabethsCv_HasWorkExperiences()
         {
-            // ARRANGE
-            var repository = new CvRepository();
-
-            // ACT
-            var cv = repository.GetElizabethsCv();
-
-            // ASSERT
-            Assert.That(cv.WorkExperiences, Is.Not.Null);
+            Assert.That(_cv.WorkExperiences, Is.Not.Null);
         }
     }
 }

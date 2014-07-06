@@ -1,7 +1,7 @@
 using CvManager.Business;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace CvManager.Model
@@ -26,8 +26,6 @@ namespace CvManager.Model
                 .OrderByDescending(cv => cv.LastModifiedDateTime)
                 .FirstOrDefault(cv => cv.IsLive);
 
-            //lizsCv.Educations = lizsCv.Educations.OrderByDescending(e => e.ConvertEndTime()).ToList();
-
             lizsCv = lizsCv ?? new Cv();
 
             return lizsCv;
@@ -37,24 +35,24 @@ namespace CvManager.Model
         {
             newCv.LastModifiedDateTime = DateTime.Now;
             newCv.IsLive = true;
-
-            _context.Entry(newCv).State = EntityState.Modified;
-            UpdateItems(newCv.Educations);
-            UpdateItems(newCv.Achievements);
-            UpdateItems(newCv.References);
-            UpdateItems(newCv.WorkExperiences);
-            UpdateItems(newCv.Conferences);
-
+            
+            newCv.Educations.ForEach(e => SetItem(e, newCv.Id));
+            newCv.Achievements.ForEach(e => SetItem(e, newCv.Id));
+            newCv.WorkExperiences.ForEach(e => SetItem(e, newCv.Id));
+            newCv.References.ForEach(e => SetItem(e, newCv.Id));
+            newCv.Conferences.ForEach(e => SetItem(e, newCv.Id));
+            
+            _context.Cvs.AddOrUpdate(newCv);
             _context.SaveChanges();
             return newCv;
         }
 
-        private void UpdateItems<T>(IEnumerable<T> items) where T : class
+        private void SetItem(CvSection item, int cvId)
         {
-            foreach (var item in items)
-            {
-                _context.Entry(item).State = EntityState.Modified;
-            }
+            item.CvId = cvId;
+            _context.Entry(item).State = (item.Id == 0)
+                ? EntityState.Added
+                : EntityState.Modified;
         }
 
         public void CreateNewCv()

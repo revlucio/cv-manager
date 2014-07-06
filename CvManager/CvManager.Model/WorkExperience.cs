@@ -3,10 +3,8 @@ using System.Web.Mvc;
 
 namespace CvManager.Model
 {
-    public class WorkExperience
+    public class WorkExperience : CvSection
     {
-        public int Id { get; set; }
-
         public string Company { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }

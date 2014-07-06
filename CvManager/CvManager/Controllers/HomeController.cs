@@ -30,11 +30,11 @@ namespace CvManager.Controllers
         }
 
         [HttpPost]
-        public ViewResult CvEdit(Cv cv)
+        public RedirectToRouteResult CvEdit(Cv cv)
         {
-            var newCv = _repository.SaveNewCv(cv);
+            _repository.SaveNewCv(cv);
 
-            return View(newCv);
+            return RedirectToAction("CvEdit", "Home");
         }
 
         [HttpPost]
