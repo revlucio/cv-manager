@@ -5,7 +5,9 @@
     <div class="item">
         <h3>
             @Html.HiddenFor(m => m.Educations[i].Id)
-            <span class="l">@Html.TextBoxFor(m => m.Educations[i].Degree, new { placeholder = "Degree" })</span>
+            <span class="l">
+                @Html.TextBoxFor(m => m.Educations[i].Degree, new { placeholder = "Degree" })
+            </span>
             <span class="r">
                 @Html.TextBoxFor(m => m.Educations[i].StartDate, new { placeholder = "StartDate" })
                 &nbsp;—&nbsp;
@@ -14,11 +16,14 @@
         </h3>
         <span class="clear">
         </span>
-        <div class="school">@Html.TextBoxFor(m => m.Educations[i].Institute, new { placeholder = "Institute" })</div>
+        <div class="order">
+            Order: @Html.EditorFor(m => m.Educations[i].Order)
+            @Html.TextBoxFor(m => m.Educations[i].Institute, new { placeholder = "Institute" })
+        </div>
         <span class="info">
             @Html.EditorFor(m => m.Educations[i].Details, new { placeholder = "Details" })
         </span>
-        
+
         <input type="button" value="Remove @Model.Educations[i].Degree" class="removeA" data-val="@i">
 
         <span class="clear">

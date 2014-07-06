@@ -19,7 +19,7 @@ namespace CvManager.Model.Tests
         [Test]
         public void AddCv()
         {
-            _repository.CreateNewCv();
+            //_repository.CreateNewCv();
         }
 
         [Test]

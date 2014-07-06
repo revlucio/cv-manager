@@ -41,3 +41,11 @@
 #references input {
     width: 50%;
 }
+
+.order input:first-of-type {
+    width: 5%;
+}
+
+.order input:last-of-type {
+    width: 80%;
+}

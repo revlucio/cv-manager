@@ -23,10 +23,11 @@ namespace CvManager.Business
                 References = GetReferences(),
                 Skills = GetSkills(),
                 LastModifiedDateTime = DateTime.Now,
+                IsLive = true,
              };
         }
 
-        private List<Education> GetEducationList()
+        private static List<Education> GetEducationList()
         {
             return new List<Education>
             {
@@ -67,7 +68,7 @@ namespace CvManager.Business
             };
         }
 
-        private List<WorkExperience> GetWorkExperiencList()
+        private static List<WorkExperience> GetWorkExperiencList()
         {
             return new List<WorkExperience>
             {
@@ -106,7 +107,7 @@ namespace CvManager.Business
             };
         }
 
-        private string GetFieldwork()
+        private static string GetFieldwork()
         {
             return @"BU International Student promotional video (Aug 13)<br><br>
                     BU Mass grave simulation (June 13)<br>Role: Archaeology excavator, Supervisor, Student ambassador<br>
@@ -123,7 +124,7 @@ namespace CvManager.Business
                     Catanauan, Philippines Field School, ANU &amp; UP (Session 1): (Nov – Dec 08)<br>Excavation,set up, archaeological recording and retrieval.&nbsp;With: Dr. Marc Oxenham (ANU ) &amp; Prof. Victor Paz (UP)<br><br>";
         }
 
-        private string GetSkills()
+        private static string GetSkills()
         {
             return @"<strong>Computer Skills:</strong>
                     <br>Microsoft Word, Excel, Power point, and Publisher, ArcGIS, Ground vision, and Easy3D, Adobe Illustrator, Paint, Internet savvy, Outlook, Groupwise, and Gmail.<br><br>
@@ -135,7 +136,7 @@ namespace CvManager.Business
                     <br>English<br><br>";
         }
 
-        private List<Conference> GetConferences()
+        private static List<Conference> GetConferences()
         {
             return new List<Conference>
             {
@@ -147,7 +148,7 @@ namespace CvManager.Business
             };
         }
 
-        private List<Achievement> GetAchievements()
+        private static List<Achievement> GetAchievements()
         {
             return new List<Achievement>
             {
@@ -166,7 +167,7 @@ namespace CvManager.Business
             };
         }
 
-        private List<Reference> GetReferences()
+        private static List<Reference> GetReferences()
         {
             return new List<Reference>
             {

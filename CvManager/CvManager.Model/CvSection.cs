@@ -4,5 +4,6 @@ namespace CvManager.Model
     {
         public int Id { get; set; }
         public int? CvId { get; set; }
+        public int Order { get; set; }
     }
 }

@@ -28,6 +28,8 @@ namespace CvManager.Model
 
             lizsCv = lizsCv ?? new Cv();
 
+            lizsCv.Educations = lizsCv.Educations.OrderBy(e => e.Order).ToList();
+
             return lizsCv;
         }
 
